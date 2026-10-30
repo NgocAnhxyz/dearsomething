@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise For You ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --wine: #701d35;
+    --red: #a83b55;
+    --pink: #f4cbd3;
+    --cream: #fff8f0;
+    --dark: #29151d;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #f9e2e5, transparent 55%),
+        linear-gradient(145deg, #fff7ef, #f3dce0);
+    color: var(--dark);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 18px;
+    animation: appear .7s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 250, 246, .91);
+    border: 1px solid rgba(112, 29, 53, .15);
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(112, 29, 53, .12);
+    position: relative;
+}
+
+.top-label {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--wine);
+}
+
+h1 {
+    font-size: 35px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #76515b;
+    margin: 15px 0 25px;
+}
+
+.illustration {
+    font-size: 65px;
+    margin: 18px 0;
+    animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% { transform: translateY(-9px); }
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 16px 13px;
+    border-radius: 13px;
+    background: var(--wine);
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 15px rgba(112, 29, 53, .2);
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    background: #8e2946;
+}
+
+.small-note {
+    font-size: 11px;
+    color: #aa8790;
+    margin-top: 18px;
+    letter-spacing: 1px;
+}
+
+/* MISSION */
+
+.mission-icon {
+    font-size: 78px;
+    margin: 20px 0;
+}
+
+.mission-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #68424d;
+    margin: 20px 0 28px;
+}
+
+.tag {
+    display: inline-block;
+    background: #f6e0e3;
+    color: var(--wine);
+    border-radius: 30px;
+    padding: 7px 15px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* KISS ANIMATION */
+
+.kiss-animation {
+    font-size: 70px;
+    animation: kiss 1s infinite alternate;
+}
+
+@keyframes kiss {
+    from { transform: scale(1) rotate(-8deg); }
+    to { transform: scale(1.2) rotate(8deg); }
+}
+
+/* LETTER */
+
+.letter-card {
+    text-align: left;
+    padding: 30px 22px;
+    background: #fffaf5;
+    border: 1px solid #ead1d2;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(112, 29, 53, .09);
+    position: relative;
+}
+
+.letter-card:before {
+    content: "♡";
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 27px;
+    color: #d99aa8;
+}
+
+.letter-card h2 {
+    text-align: center;
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.letter-card p {
+    font-size: 15px;
+    line-height: 2;
+    color: #63434b;
+    margin-bottom: 17px;
+}
+
+.signature {
+    text-align: right;
+    color: var(--wine);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+/* SECRET */
+
+.secret-box {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    animation: float 2s infinite ease-in-out;
+    margin: 20px 0;
+    transition: .3s;
+}
+
+.secret-box:active {
+    transform: scale(.9);
+}
+
+.secret-letter {
+    background: #fffaf5;
+    border: 1px solid #e8c5c9;
+    padding: 30px 22px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(112, 29, 53, .1);
+}
+
+.secret-letter h2 {
+    text-align: center;
+    font-size: 27px;
+}
+
+.secret-letter p {
+    font-size: 15px;
+    line-height: 2;
+    color: #68424d;
+    margin-top: 18px;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #c76d83;
+    pointer-events: none;
+    animation: rise 5s linear forwards;
+    z-index: 10;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+.divider {
+    width: 55px;
+    height: 2px;
+    background: #dca5ae;
+    margin: 20px auto;
+}
+
+@media (max-width: 380px) {
+    h1 { font-size: 30px; }
+    h2 { font-size: 25px; }
+    .card { padding: 28px 19px; }
+    .letter-card p { font-size: 14px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MÀN 0: BẮT ĐẦU -->
+
+<section class="screen active" id="start">
+    <div class="card">
+        <div class="top-label">A LITTLE SURPRISE ♡</div>
+
+        <div class="illustration">💌</div>
+
+        <h1>Hey, birthday boy!</h1>
+
+        <div class="divider"></div>
+
+        <p class="description">
+            Có một vài điều nho nhỏ mà bạn gái muốn gửi đến anh.
+            Nhưng trước tiên... anh phải hoàn thành vài nhiệm vụ đã nhé.
+        </p>
+
+        <button class="main-btn" onclick="show('letterStart')">
+           SWEET REVEAL ♡
+        </button>
+
+        <p class="small-note">Made with, dành cho anh iuuu<3</p>
+    </div>
+</section>
+
+
+<!-- MÀN 1: BỨC THƯ -->
+
+<section class="screen" id="letterStart">
+    <div class="card">
+        <div class="top-label">MISSION 01</div>
+
+        <div class="illustration">✉️</div>
+
+        <h2>You've got a letter!</h2>
+
+        <p class="description">
+            Ai ở đây đang nhớ anh lắm nè trừi mà nhé người khác không nhớ anh nhiều bằng tui nhớ anh đâu nghe chưa :)))
+            Mở lá thư ra xem thử nào?
+        </p>
+
+        <button class="main-btn" onclick="show('hug')">
+            OPEN THE LETTER
+        </button>
+    
+    <p class="small-note">Made with, dành cho anh iuuu<3</p>
+    </div>
+</section>
+
+
+<!-- MÀN 2: CẦN MỘT CÁI ÔM -->
+
+<section class="screen" id="hug">
+    <div class="card">
+        <div class="top-label">A REQUEST FROM YOUR GIRL ♡</div>
+
+        <div class="mission-icon">🥺</div>
+
+        <h2>Wait a second...</h2>
+
+        <p class="mission-text">
+            Bạn gái cần mụt cái ôm của anh.
+            <br>
+            Anh có thể gửi cho cô ấy một cái ôm không?
+        </p>
+
+        <button class="main-btn" onclick="hug()">
+            SEND A HUG 🫂
+        </button>
+    
+    <p class="small-note">em biết anh sẽ hong từ chối đâu 0v0</p>
+    </div>
+</section>
+
+
+<!-- MÀN 3: ĐÃ NHẬN ÔM -->
+
+<section class="screen" id="hugDone">
+    <div class="card">
+        <div class="top-label">HUG RECEIVED ♡</div>
+
+        <div class="mission-icon">🫂💕</div>
+
+        <h2>Yayyyy!</h2>
+
+        <p class="mission-text">
+            Tui đã nhận được một cái ôm từ anh 
+            <br><br>
+            Nhưng mà...
+        </p>
+
+        <button class="main-btn" onclick="show('kiss')">
+            WHAT'S NEXT?
+        </button>
+    </div>
+</section>
+
+
+<!-- MÀN 4: GỬI NỤ HÔN -->
+
+<section class="screen" id="kiss">
+    <div class="card">
+        <div class="top-label">MISSION 02</div>
+
+        <div class="mission-icon">💋</div>
+
+        <h2>One more thing!</h2>
+
+        <p class="mission-text">
+            Yêu dấu của anh đang phải chờ một nụ hôn từ anh đó.
+            <br>
+            Không được từ chối đâu nha!
+        </p>
+
+        <button class="main-btn" onclick="sendKiss()">
+            SEND A KISS 
+        </button>
+   
+    <p class="small-note">anh ưiii emyeuanh huhu</p>
+    </div>
+</section>
+
+
+<!-- MÀN 5: BỊ ĐÁ ĐÍC -->
+
+<section class="screen" id="kicked">
+    <div class="card">
+        <div class="top-label">MISSION COMPLETED</div>
+
+        <div class="mission-icon">😼💗</div>
+
+        <h2>Chúc mừng anh!</h2>
+
+        <p class="mission-text">
+            Anh đã bị bạn gái đá đíc!
+            <br><br>
+            Chúc anh may mắn lần sau. =))))
+        </p>
+
+        <button class="main-btn" onclick="show('receive')">
+            CONTINUE →
+        </button>
+    </div>
+</section>
+
+
+<!-- MÀN 6: NHẬN NỤ HÔN -->
+
+<section class="screen" id="receive">
+    <div class="card">
+        <div class="top-label">FINAL MISSION ♡</div>
+
+        <div class="mission-icon">🐰</div>
+
+        <h2>Final request!</h2>
+
+        <p class="mission-text">
+            Nhiệm vụ cuối cùng:
+            <br><br>
+            :))nhận cgi từ tui thế
+        </p>
+
+        <button class="main-btn" onclick="receiveKiss()">
+            RECEIVE KISS ♡
+        </button>
+    </div>
+</section>
+
+
+<!-- MÀN 7: THƠM MÁ -->
+
+<section class="screen" id="kissDone">
+    <div class="card">
+        <div class="top-label">SPECIAL REWARD ♡</div>
+
+        <div class="kiss-animation">😽</div>
+
+        <h2>Chụt! 💗</h2>
+
+        <p class="mission-text">
+            Chúc mừng anh đã nhận được một cái thơm má
+            siu siu đáng yêu từ bạn gái!
+            <br><br>
+            Phần thưởng độc quyền, không có bản thứ hai.
+        </p>
+
+        <button class="main-btn" onclick="show('birthday')">
+            CLAIM YOUR GIFT ♡
+        </button>
+   
+    <p class="small-note">hz anh ơi, anh có iu em hong? bé trl đi chị cho kẹo</p>
+    </div>
+</section>
+
+
+<!-- MÀN 8: LỜI CHÚC SINH NHẬT -->
+
+<section class="screen" id="birthday">
+    <div class="card">
+        <div class="top-label">A LETTER FROM YOUR GIRL</div>
+
+        <div class="letter-card">
+
+            <h2>Tèn ten! Happy Birthday! ♡</h2>
+
+            <p>
+                Tèn ten! Chúc mừng sinh nhật cục cưng của em!
+                Tuổi mới chúc anh yêu em nhiều hơn nữa nha chưa. 😜
+            </p>
+
+            <p>
+                Chúc anh yêu tuổi mới đẹp trai hơn
+                (nhưng đừng để đứa khác để ý),
+                giỏi giang hơn và ví tiền lúc nào cũng dày nhé.
+            </p>
+
+            <p>
+                Quà sinh nhật to lớn nhất anh đã nhận được rồi,
+                chính là sự xuất hiện của em đó!
+                Đừng đòi hỏi gì thêm nha quý vị. =))))
+            </p>
+             
+            <p>
+                Nói giỡn chứ, chúc anh yêu sinh nhật thật hạnh phúc. Mong tuổi mới sẽ mang đến cho anh thật nhiều điều tốt đẹp, nhiều niềm vui, nhiều may mắn và những ngày bình yên. Mong anh luôn khỏe mạnh, được yêu thương và luôn có những người thật lòng ở bên cạnh.
+            </p>
+
+            <p>
+                Anh nhớ ăn uống đầy đủ,
+                ngủ đủ giấc, đừng thức khuya quá nhiều
+                và nhớ chăm sóc bản thân thật tốt nha.
+            </p>
+
+            <p>
+                Em mong anh sẽ luôn vui vẻ, kể cả những ngày không được như ý. Không cần lúc nào anh cũng phải giỏi giang hay mạnh mẽ đâu, cứ sống thật vui, chăm sóc bản thân thật tốt và làm những điều khiến anh hạnh phúc nhé.
+            </p>
+
+          <p> Chúc anh sinh nhật vui vẻ! Mong là tuổi mới anh sẽ gặp nhiều may mắn hơn, vui vẻ hơn, xung quanh nhiều sự yêu thương hơn, sức khỏe tốt hơn, nhiều giấc ngủ ngon hơnnn. Chúc anh ăn no ngủ đủ và chịu khó yêu em nhé :). ❤️</p>
+            <p>
+                Em yêu anh nhìu lắmm, anh chòn iu dấu của tui 
+                ><
+            </p>
+
+            <div class="signature">
+                With all my love,<br>
+                Your girl ♡
+            </div>
+
+        </div>
+
+        <br>
+
+        <button class="main-btn" onclick="show('secretBox')">
+            WAIT... THERE'S MORE?
+        </button>
+
+        <p class="small-note">YOU HAVEN'T FOUND THE LAST SECRET YET</p>
+    </div>
+</section>
+
+
+<!-- MÀN 9: HỘP QUÀ BÍ MẬT -->
+
+<section class="screen" id="secretBox">
+    <div class="card">
+        <div class="top-label">ONE LAST SECRET</div>
+
+        <div class="secret-box" onclick="show('secretLetter')">
+            🎁
+        </div>
+
+        <h2>...</h2>
+
+        <p class="description">
+            Có một món quà cuối cùng đang đợi anh.
+            <br>
+            Mở chiếc hộp có dải ruy băng này ra nhé.
+        </p>
+
+        <button class="main-btn" onclick="show('secretLetter')">
+            OPEN MY SECRET ♡
+        </button>
+    </div>
+</section>
+
+
+<!-- MÀN 10: LÁ THƯ BÍ MẬT -->
+
+<section class="screen" id="secretLetter">
+    <div class="card">
+        <div class="top-label">PRIVATE LETTER ♡</div>
+
+        <div class="illustration">🎀💌</div>
+
+        <h2>Anh ơiiii...</h2>
+
+        <p class="mission-text">
+            Lại đây em nói nhỏ nè... 🥺
+        </p>
+
+        <button class="main-btn" onclick="show('whisper')">
+            Tell me more ♡
+        </button>
+    </div>
+</section>
+
+
+<!-- MÀN 11: LỜI TÂM TÌNH CUỐI -->
+
+<section class="screen" id="whisper">
+    <div class="card">
+        <div class="top-label">JUST BETWEEN US</div>
+
+        <div class="secret-letter">
+
+            <h2>Anh ơiiii... ♡</h2>
+
+            <p>
+                Lại đây em nói nhỏ nè... 🥺
+            </p>
+
+            <p>
+                Sinh nhật vui vẻ nha tình yêu của em. Thêm tuổi mới thì phải ngoan hơn, vui vẻ hơn, biết chăm sóc bản thân hơn và đặc biệt là phải thương em nhiều hơn đó :)
+
+            </p>
+
+            <p>
+                Cảm ơn anh vì đã xuất hiện trong cuộc sống của em. Em không biết tương lai sẽ thế nào, nhưng em thật sự vui vì hiện tại người em thương là anh. Mong chúng mình sẽ có thêm thật nhiều kỷ niệm đáng nhớ, cùng nhau trưởng thành và thương nhau nhiều hơn nữa. 🫶🏻
+            </p>
+
+            <p>
+                  Một điều em muốn anh nhớ 
+Anh luôn xứng đáng được yêu thương, được trân trọng và được hạnh phúc. Mong tuổi mới sẽ dịu dàng với anh thật nhiều ♡
+
+            </p>
+
+            <p>
+                Thôi, nói nhỏ vậy đủ rồi.
+                Lại đây em thơm thêm cái nữa! <3
+            </p>
+
+            <div class="signature">
+                Love you endlessly ♡
+            </div>
+
+        </div>
+
+        <div class="illustration">💗</div>
+
+        <p class="small-note">THE END — BUT MY LOVE IS NOT ♡</p>
+    
+    <p class="small-note">meomeomeo</p>
+    </div>
+</section>
+
+
+<script>
+function show(id) {
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    hearts();
+}
+
+function hearts() {
+    for (let i = 0; i < 5; i++) {
+        let heart = document.createElement('div');
+
+        heart.className = 'heart';
+        heart.innerHTML = ['♡', '♥', '💕', '💗'][
+            Math.floor(Math.random() * 4)
+        ];
+
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+function hug() {
+    show('hugDone');
+    hearts();
+}
+
+function sendKiss() {
+    show('kicked');
+    hearts();
+}
+
+function receiveKiss() {
+    show('kissDone');
+    hearts();
+}
+
+/* Timed floating hearts */
+setInterval(() => {
+    if (Math.random() > 0.5) {
+        hearts();
+    }
+}, 5000);
+</script>
+
+</body>
+</html>
